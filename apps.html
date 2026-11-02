@@ -464,6 +464,117 @@
   @media (max-width:640px){ .band{padding:36px 22px;border-radius:24px} }
   .band h2{color:#fff;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.04em;max-width:18ch}
   .band p{color:rgba(255,255,255,.92);margin-top:12px;font-size:1.06rem;max-width:44ch}
+  /* ---------- phone and touch optimisation ---------- */
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:76px}
+  a,button,summary{-webkit-tap-highlight-color:rgba(123,92,255,.15)}
+  @media (hover:none){
+    .card:hover{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(var(--line),var(--line)) border-box;animation:none;transform:none;box-shadow:none}
+    .card.custom:hover{background:var(--grad)}
+    .card:hover .ic{transform:rotate(-4deg)}
+    .btn:hover,.btn-glow:hover,.btn-ghost:hover,.btn-white:hover,.btn-ring:hover{transform:none;animation:none}
+    .btn-glow:hover::before{opacity:0}
+    .btn-3d,.btn-3d:hover{transform:translateY(-3px)}
+    .btn-3d:active{transform:translateY(2px)}
+  }
+  @media (max-width:640px){
+    .nav-in{height:60px}
+    .brand{padding:7px 0}
+    .btn-ring{min-height:44px;padding:.5em 1em}
+    .sec{padding:48px 0}
+    .shead h2{font-size:clamp(2rem,9vw,2.5rem)}
+    .shead .sp{font-size:1.02rem;margin-top:12px}
+
+    /* hero: message and action first; the process is covered further down */
+    .hero{padding:36px 0 12px}
+    .hero .stage{display:none}
+    .hero-cta{margin-top:26px}
+    .hero-cta .btn{width:100%;min-height:52px}
+    .hero-pts{margin-top:20px}
+
+    /* tools: one swipeable row */
+    .tools{padding:22px 0 8px}
+    .tools .lab{padding:0 16px;margin-bottom:12px}
+    .marquee{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .marquee::-webkit-scrollbar{display:none}
+    .track{flex-wrap:nowrap;justify-content:flex-start;width:max-content;gap:8px;padding:2px 24px}
+    .tool{padding:8px 13px 8px 9px;font-size:.92rem}
+    .tool img{width:22px;height:22px}
+
+    .svc2{margin-top:30px;gap:14px}
+    .svc{padding:24px 20px;gap:10px;border-radius:22px}
+    .svc .btn{width:100%;min-height:48px;margin-top:8px}
+
+    /* examples */
+    .ex-h{margin:34px 0 16px}
+    .more-link{min-height:44px;padding:10px 0 6px}
+    .portal-wrap{margin-top:0}
+    .agent-chip{display:none}
+    .win-top .badge{display:none}
+    .main{padding:16px;gap:14px}
+    .tile{padding:12px}
+    .tile b{font-size:1.3rem}
+    .portal .tb th:nth-child(2),.portal .tb td:nth-child(2){display:none}
+    .portal .tb th,.portal .tb td{padding:10px 12px}
+    .win-foot span:last-child{display:none}
+    .portal .tb .badge{white-space:normal;line-height:1.25}
+    .shead .sp a{display:inline-block;padding:13px 0 5px}
+
+    /* three agents: swipeable cards */
+    .ex3{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:24px;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-inline:-24px;padding:2px 24px 10px}
+    .ex3::-webkit-scrollbar{display:none}
+    .exc{flex:0 0 min(84%,340px);scroll-snap-align:start;padding:20px}
+    .ex-note{margin-top:8px}
+
+    /* process: compact steps */
+    .steps{margin-top:28px;gap:14px}
+    .step{display:grid;grid-template-columns:auto 1fr;column-gap:14px;padding:18px 18px 20px;box-shadow:4px 4px 0 var(--sc);border-radius:18px}
+    .step .num{font-size:2rem;grid-row:span 2;align-self:start}
+    .step h3{margin-top:3px;font-size:1.2rem}
+    .step p{grid-column:2;margin-top:4px;font-size:.96rem}
+
+    .ctrl .pts{margin-top:24px}
+    .note{padding:22px}
+    .note .btn{width:100%;min-height:50px}
+    .faq-wrap{gap:22px}
+    details p{font-size:.97rem}
+    .contact .alt a{display:inline-block;padding:13px 0 5px}
+    .form-submit{min-height:52px}
+
+    /* example pages */
+    .page-hero{padding:24px 0 8px}
+    .back{min-height:44px;margin-bottom:12px}
+    .page-hero .sp{font-size:1.04rem;margin-top:14px}
+    .page-hero .btn,.band .btn,.panel .ph .btn,.card.custom .btn{width:100%;min-height:50px;margin-left:0}
+    .band{padding:30px 20px}
+    .show{margin-top:28px}
+    .tab{min-height:44px}
+    .agrid,.grid{margin-top:28px;gap:12px}
+    .agrid .card,.grid .card{padding:20px}
+    .card .ic{margin-bottom:4px}
+
+    /* footer: comfortable links */
+    footer{padding:36px 0 28px}
+    .foot-grid{display:block}
+    .foot-col{margin-bottom:22px}
+    .foot-col a{display:inline-block;padding:13px 0;line-height:18px}
+    .foot-col p{line-height:1.5}
+    .foot-col:last-child p{display:grid;grid-template-columns:1fr 1fr;column-gap:16px}
+    .foot-col:last-child br{display:none}
+    .foot-bottom a{display:inline-block;padding:13px 0;line-height:18px}
+    .foot-bottom{align-items:center;margin-top:10px;padding-top:10px}
+    .msg .who{font-size:.75rem}
+    .live{font-size:.75rem}
+  }
+  @media (max-width:480px){
+    .ex3{margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px}
+    .track{padding-inline:16px}
+  }
+  @media (max-width:360px){
+    .brand{font-size:1.04rem;padding:10px 0}
+    .btn-ring{font-size:.84rem;padding:.5em .75em}
+    .btn-lg{white-space:normal;text-align:center}
+  }
+
   /* ---------- page transition: fade and swipe between pages ---------- */
   @view-transition{navigation:auto}
   html:active-view-transition{scroll-behavior:auto}
