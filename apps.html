@@ -617,24 +617,24 @@
 <body>
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="index.html">Tailwind Solutions<i>.</i></a>
+    <a class="brand" href="/">Tailwind Solutions<i>.</i></a>
     <nav class="nav-links">
-      <a href="index.html#services">Services</a>
-      <a href="index.html#see">Examples</a>
-      <a href="index.html#why">Why us</a>
-      <a href="index.html#faq">FAQ</a>
+      <a href="/#services">Services</a>
+      <a href="/#see">Examples</a>
+      <a href="/#why">Why us</a>
+      <a href="/#faq">FAQ</a>
     </nav>
-    <a class="btn btn-ring" href="index.html#contact">Book a call</a>
+    <a class="btn btn-ring" href="/#contact">Book a call</a>
   </div>
 </header>
 
 <main id="top">
   <section class="page-hero">
     <div class="wrap">
-      <a class="back" href="index.html#services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Back to home</a>
+      <a class="back" href="/#services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Back to home</a>
       <h1>Internal apps we design <span class="grad-text">and build for you.</span></h1>
       <p class="sp">Portals, CRMs, dashboards and internal tools, built around how your business works. They share data with your agents, so the work keeps moving while your team uses them.</p>
-      <div class="hero-cta"><a class="btn btn-glow btn-lg" href="index.html#contact">Book a free discovery call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="hero-cta"><a class="btn btn-glow btn-lg" href="/#contact">Book a free discovery call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 
@@ -693,7 +693,7 @@
 
   <section class="sec" style="padding-bottom:0">
     <div class="wrap">
-      <div class="band reveal"><div><h2>Need an app built around your business?</h2><p>Tell us what you are managing today and we will plan the right app with you.</p></div><a class="btn btn-white btn-lg" href="index.html#contact">Book a free discovery call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="band reveal"><div><h2>Need an app built around your business?</h2><p>Tell us what you are managing today and we will plan the right app with you.</p></div><a class="btn btn-white btn-lg" href="/#contact">Book a free discovery call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </section>
 </main>
@@ -712,19 +712,19 @@
       <div class="foot-col">
         <span class="foot-k">On this page</span>
         <p>
-          <a href="index.html#services">Services</a><br>
-          <a href="index.html#see">Examples</a><br>
+          <a href="/#services">Services</a><br>
+          <a href="/#see">Examples</a><br>
           <a href="#agents">AI agents</a><br>
           <a href="#apps">Internal apps</a><br>
-          <a href="index.html#why">Why us</a><br>
-          <a href="index.html#faq">FAQ</a><br>
-          <a href="index.html#contact">Book a call</a>
+          <a href="/#why">Why us</a><br>
+          <a href="/#faq">FAQ</a><br>
+          <a href="/#contact">Book a call</a>
         </p>
       </div>
     </div>
     <div class="foot-bottom">
       <span>&copy; 2026 Tailwind Solutions. All rights reserved.</span>
-      <span><a href="privacy.html">Privacy policy</a></span>
+      <span><a href="/privacy">Privacy policy</a></span>
     </div>
   </div>
 </footer>
@@ -749,5 +749,17 @@
 
 </script>
 
+<script>
+  /* keep the address clean: scroll to sections without adding #section to it */
+  (function(){
+    document.addEventListener('click',function(e){
+      var a=e.target.closest&&e.target.closest('a[href*="#"]'); if(!a||e.metaKey||e.ctrlKey||e.shiftKey) return;
+      var u=new URL(a.href); if(u.pathname!==location.pathname||!u.hash) return;
+      var t=document.getElementById(u.hash.slice(1)); if(!t) return;
+      e.preventDefault(); t.scrollIntoView();
+    });
+    if(location.hash) addEventListener('load',function(){ history.replaceState(null,'',location.pathname+location.search); });
+  })();
+</script>
 </body>
 </html>

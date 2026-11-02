@@ -702,13 +702,13 @@
           <h3>Internal apps</h3>
           <p>Custom portals, CRMs and dashboards, designed around how your business works, for your team and your clients.</p>
           <ul><li>Client portals</li><li>CRMs</li><li>Dashboards</li><li>Project tools</li><li>Inventory</li><li>Intranets</li></ul>
-          <a class="btn btn-white" href="apps.html">See app examples</a>
+          <a class="btn btn-white" href="/apps">See app examples</a>
         </div>
         <div class="svc a reveal">
           <h3>AI agents</h3>
           <p>Agents that handle the repetitive work your team does every day, inside the tools you already use.</p>
           <ul><li>Inbox</li><li>Lead follow up</li><li>Customer support</li><li>Admin &amp; data entry</li><li>Invoices</li><li>Scheduling</li></ul>
-          <a class="btn btn-3d" href="agents.html">See agent examples</a>
+          <a class="btn btn-3d" href="/agents">See agent examples</a>
         </div>
       </div>
     </div>
@@ -722,7 +722,7 @@
         <p class="sp">Every project is tailored to the business. Here is one internal app and three AI agents our clients ask for most.</p>
       </div>
 
-      <div class="ex-h reveal"><div><span class="kind" style="background:var(--violet-d);color:#fff">Internal app</span><h3>Client portal</h3><p>One secure login where your clients see their projects, invoices, files and messages.</p></div><a class="more-link" href="apps.html">More app examples <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="ex-h reveal"><div><span class="kind" style="background:var(--violet-d);color:#fff">Internal app</span><h3>Client portal</h3><p>One secure login where your clients see their projects, invoices, files and messages.</p></div><a class="more-link" href="/apps">More app examples <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       <div class="portal-wrap reveal" aria-label="Illustration of a client portal we could build">
         <div class="agent-chip" aria-hidden="true"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c.6 3.8 3.2 6.4 7 7-3.8.6-6.4 3.2-7 7-.6-3.8-3.2-6.4-7-7 3.8-.6 6.4-3.2 7-7z"/></svg></span><div><b>Agent updated 3 invoices</b><small>Synced to the portal, 2 min ago</small></div></div>
         <div class="win">
@@ -760,7 +760,7 @@
       </div>
 
 
-      <div class="ex-h reveal" style="margin-top:90px"><div><span class="kind" style="background:var(--orange);color:#0E0E12">AI agents</span><h3>Three agents that save hours every week</h3></div><a class="more-link" href="agents.html">More agent examples <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="ex-h reveal" style="margin-top:90px"><div><span class="kind" style="background:var(--orange);color:#0E0E12">AI agents</span><h3>Three agents that save hours every week</h3></div><a class="more-link" href="/agents">More agent examples <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       <div class="ex3" role="group" aria-label="Three example AI agents" tabindex="0">
         <div class="exc reveal" style="background:var(--orange)">
           <h4>Sorts and answers your email</h4>
@@ -921,8 +921,8 @@
         <p>
           <a href="#services">Services</a><br>
           <a href="#see">Examples</a><br>
-          <a href="apps.html">Internal apps</a><br>
-          <a href="agents.html">AI agents</a><br>
+          <a href="/apps">Internal apps</a><br>
+          <a href="/agents">AI agents</a><br>
           <a href="#why">Why us</a><br>
           <a href="#faq">FAQ</a><br>
           <a href="#contact">Book a call</a>
@@ -931,7 +931,7 @@
     </div>
     <div class="foot-bottom">
       <span>&copy; 2026 Tailwind Solutions. All rights reserved.</span>
-      <span><a href="privacy.html">Privacy policy</a></span>
+      <span><a href="/privacy">Privacy policy</a></span>
     </div>
   </div>
 </footer>
@@ -974,5 +974,17 @@
   })();
 </script>
 
+<script>
+  /* keep the address clean: scroll to sections without adding #section to it */
+  (function(){
+    document.addEventListener('click',function(e){
+      var a=e.target.closest&&e.target.closest('a[href*="#"]'); if(!a||e.metaKey||e.ctrlKey||e.shiftKey) return;
+      var u=new URL(a.href); if(u.pathname!==location.pathname||!u.hash) return;
+      var t=document.getElementById(u.hash.slice(1)); if(!t) return;
+      e.preventDefault(); t.scrollIntoView();
+    });
+    if(location.hash) addEventListener('load',function(){ history.replaceState(null,'',location.pathname+location.search); });
+  })();
+</script>
 </body>
 </html>

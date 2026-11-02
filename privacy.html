@@ -112,8 +112,8 @@
 <body>
 <header class="nav">
   <div class="nav-in">
-    <a class="brand" href="index.html">Tailwind Solutions</a>
-    <a class="back" href="index.html">&larr; Back to home</a>
+    <a class="brand" href="/">Tailwind Solutions</a>
+    <a class="back" href="/">&larr; Back to home</a>
   </div>
 </header>
 
@@ -217,9 +217,21 @@
 <footer>
   <div class="wrap fin">
     <span>&copy; 2026 Tailwind Solutions. All rights reserved.</span>
-    <a href="index.html">Back to home</a>
+    <a href="/">Back to home</a>
   </div>
 </footer>
 
+<script>
+  /* keep the address clean: scroll to sections without adding #section to it */
+  (function(){
+    document.addEventListener('click',function(e){
+      var a=e.target.closest&&e.target.closest('a[href*="#"]'); if(!a||e.metaKey||e.ctrlKey||e.shiftKey) return;
+      var u=new URL(a.href); if(u.pathname!==location.pathname||!u.hash) return;
+      var t=document.getElementById(u.hash.slice(1)); if(!t) return;
+      e.preventDefault(); t.scrollIntoView();
+    });
+    if(location.hash) addEventListener('load',function(){ history.replaceState(null,'',location.pathname+location.search); });
+  })();
+</script>
 </body>
 </html>
