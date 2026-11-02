@@ -26,7 +26,7 @@
   :focus-visible{outline:2px solid var(--white);outline-offset:3px;border-radius:5px}
   .wrap{max-width:760px;margin:0 auto;padding:0 24px}
 
-  header.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  header.nav{position:sticky;top:12px;z-index:60;width:calc(100% - 32px);max-width:812px;margin:12px auto 0;background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(14,14,18,.09);border-radius:18px;box-shadow:0 8px 28px rgba(30,20,60,.08)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:760px;margin:0 auto;padding:0 24px}
   .brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:1.06rem;letter-spacing:-.03em;color:var(--white);text-decoration:none}
   .brand .mk{width:20px;height:20px;border-radius:6px;background:var(--white);display:grid;place-items:center}
@@ -63,7 +63,7 @@
   footer a{color:var(--text-2);text-decoration:none}
   footer a:hover{color:var(--white)}
   /* ---------- phones ---------- */
-  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:72px}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:88px}
   @media (max-width:640px){
     .brand{padding:8px 0}
     .back{display:inline-block;padding:13px 0;font-size:.8rem}
@@ -73,12 +73,14 @@
     .head{padding-top:40px}
   }
 
+  @media (max-width:640px){ header.nav{top:8px;margin-top:8px;width:calc(100% - 16px);border-radius:16px} }
+
   /* ---------- page transition: fade and swipe between pages ---------- */
   @view-transition{navigation:auto}
   html:active-view-transition{scroll-behavior:auto}
-  ::view-transition-group(root){animation-duration:.42s}
-  ::view-transition-old(root){animation:vt-out-left .42s cubic-bezier(.4,0,.2,1) both}
-  ::view-transition-new(root){animation:vt-in-right .42s cubic-bezier(.4,0,.2,1) both}
+  ::view-transition-group(root){animation-duration:.9s}
+  ::view-transition-old(root){animation:vt-out-left .9s ease-in-out both}
+  ::view-transition-new(root){animation:vt-in-right .9s ease-in-out both}
   html.vt-back::view-transition-old(root){animation-name:vt-out-right}
   html.vt-back::view-transition-new(root){animation-name:vt-in-left}
   @keyframes vt-out-left{to{opacity:0;transform:translateX(-56px)}}
