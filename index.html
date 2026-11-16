@@ -4,201 +4,189 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Tailwind Solutions builds AI agents and custom internal apps for businesses, done for you from start to finish.">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#F5F1E8">
 <title>Tailwind</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iI0ZGRkZGRiIgc3Ryb2tlPSIjRThFN0UzIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjUiIGZpbGw9IiMwRTBFMTIiLz48ZyBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48bGluZSB4MT0iMTYiIHkxPSI0IiB4Mj0iMTYiIHkyPSIxMCIgc3Ryb2tlPSIjRkY2QTJCIi8+PGxpbmUgeDE9IjIyIiB5MT0iMTYiIHgyPSIyOCIgeTI9IjE2IiBzdHJva2U9IiMxNkEzNEEiLz48bGluZSB4MT0iMTYiIHkxPSIyMiIgeDI9IjE2IiB5Mj0iMjgiIHN0cm9rZT0iIzFGNjNGMCIvPjxsaW5lIHgxPSI0IiB5MT0iMTYiIHgyPSIxMCIgeTI9IjE2IiBzdHJva2U9IiNGRjNEOEIiLz48L2c+PC9zdmc+Cg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:opsz,wght@9..40,400..700&family=DM+Mono:wght@400;500&display=swap">
 <style>
   :root{
-    color-scheme:dark;
-    --bg:#000;
-    --panel:#0A0A0A;
-    --panel-2:#111;
-    --line:#1F1F1F;
-    --line-2:#2E2E2E;
-    --text:#EDEDED;
-    --muted:#A1A1A1;
-    --dim:#707070;
-    --maxw:1180px;
-    --sans:"Geist",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-    --mono:"Geist Mono",ui-monospace,Menlo,monospace;
+    color-scheme:light;
+    --paper:#F5F1E8;
+    --ink:#0F0F0F;
+    --text:#262626;
+    --muted:#5A5650;
+    --line:#E3DDD0;
+    --orange:#FF6A2B;
+    --blue:#1F63F0;
+    --green:#22B455;
+    --pink:#FF4F9A;
+    --maxw:1200px;
+    --display:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;
+    --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+    --mono:"DM Mono",ui-monospace,Menlo,monospace;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:92px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{margin:0;font-weight:400;letter-spacing:-.04em;line-height:1.05;color:#fff;text-wrap:balance}
+  html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height:1;color:inherit;text-wrap:balance}
   p{margin:0}
   a{color:inherit;text-decoration:none}
-  :focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:6px}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
   @media (max-width:480px){ .wrap{padding:0 18px} }
-  .mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.02em;color:var(--dim);text-transform:uppercase}
+  .mono,.eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:44px;padding:0 20px;border-radius:999px;font-weight:500;font-size:.95rem;border:1px solid transparent;cursor:pointer;transition:background .15s ease,border-color .15s ease}
-  .btn-white{background:#fff;color:#000}
-  .btn-white:hover{background:#d9d9d9}
-  .btn-dark{background:#0A0A0A;color:#fff;border-color:var(--line-2)}
-  .btn-dark:hover{background:#1a1a1a;border-color:#444}
-  .arrow{display:inline-flex;align-items:center;gap:6px;color:#fff;font-weight:500;min-height:44px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:50px;padding:0 24px;border-radius:999px;font-family:var(--sans);font-weight:700;font-size:1rem;border:2px solid var(--ink);cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
+  .btn-primary{background:var(--ink);color:var(--paper);box-shadow:4px 4px 0 var(--orange)}
+  .btn-primary:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--orange)}
+  .btn-ghost{background:transparent;color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn-light{background:#fff;color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+  .btn-light:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+  .arrow{display:inline-flex;align-items:center;gap:6px;font-weight:700;min-height:44px;color:var(--ink)}
   .arrow::after{content:"\2192";transition:transform .15s ease}
   .arrow:hover::after{transform:translateX(3px)}
 
   /* top bar */
-  header.nav{position:sticky;top:12px;z-index:50;width:calc(100% - 32px);max-width:var(--maxw);margin:12px auto 0;background:rgba(10,10,10,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line-2);border-radius:16px}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:60px;padding:0 10px 0 18px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:1.02rem;letter-spacing:-.02em;color:#fff;padding:10px 0}
-  .brand svg{width:22px;height:22px}
-  .nav-links{display:flex;gap:26px}
-  .nav-links a{font-size:.9rem;color:var(--muted)}
-  .nav-links a:hover{color:#fff}
+  header.nav{position:sticky;top:12px;z-index:50;width:calc(100% - 32px);max-width:var(--maxw);margin:12px auto 0;background:rgba(245,241,232,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:2px solid var(--ink);border-radius:18px}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:62px;padding:0 8px 0 18px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:-.03em;color:var(--ink);padding:10px 0}
+  .brand svg{width:24px;height:24px}
+  .nav-links{display:flex;gap:6px}
+  .nav-links a{font-weight:600;font-size:.95rem;color:var(--ink);padding:8px 14px;border-radius:999px}
+  .nav-links a:hover,.nav-links a[aria-current="page"]{background:var(--ink);color:var(--paper)}
   .nav-cta{display:flex;gap:8px}
-  .nav .btn{min-height:40px;padding:0 15px;font-size:.88rem}
-  @media (max-width:860px){ .nav-links{display:none} }
-  @media (max-width:520px){ .nav-cta .btn-dark{display:none} .nav .btn{min-height:44px} }
-  @media (max-width:640px){ header.nav{top:8px;margin-top:8px;width:calc(100% - 16px)} .nav-in{padding:0 8px 0 14px} }
+  .nav .btn{min-height:44px;padding:0 18px;font-size:.92rem;box-shadow:none}
+  .nav .btn:hover{transform:none;box-shadow:none;background:var(--orange);color:var(--ink)}
+  @media (max-width:760px){ .nav-links{display:none} }
+  @media (max-width:640px){ header.nav{top:8px;margin-top:8px;width:calc(100% - 16px)} .nav-in{padding:0 6px 0 14px} }
 
   /* hero */
-  .hero{position:relative;padding:110px 0 90px;overflow:hidden}
-  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
-  .hero h1{font-size:clamp(3rem,6.2vw,5.2rem);line-height:1;letter-spacing:-.05em}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-  .mark{position:relative;display:grid;place-items:center;aspect-ratio:1}
-  .mark::before{content:"";position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.55) 0%,rgba(255,255,255,.14) 34%,transparent 64%)}
-  .mark svg{position:relative;width:62%;height:auto}
-  .hero-side{display:flex;flex-direction:column;gap:14px;color:#fff;font-size:1.05rem}
-  .hero-side span{color:var(--muted)}
-  @media (max-width:980px){ .hero-grid{grid-template-columns:1fr 1fr} .hero-side{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;gap:8px 28px} }
-  @media (max-width:640px){
-    .hero{padding:56px 0 48px}
-    .hero-grid{grid-template-columns:1fr;gap:28px}
-    .mark{order:-1;width:62%;max-width:240px;margin:0 auto}
-    .hero-cta .btn{flex:1 1 100%}
-    .hero-side{flex-direction:column;gap:10px}
-  }
+  .hero{padding:96px 0 72px}
+  .hero h1{font-size:clamp(3rem,8.6vw,7.6rem);line-height:.95;letter-spacing:-.045em;color:var(--ink);max-width:13ch}
+  .hl{display:inline-block;padding:0 .14em;border-radius:.14em;line-height:1.02}
+  .hl.o{background:var(--orange);transform:rotate(-1.5deg)}
+  .hl.b{background:var(--blue);color:#fff;transform:rotate(1.5deg)}
+  .hero-foot{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;margin-top:44px}
+  .hero .sub{font-size:clamp(1.08rem,1.6vw,1.3rem);color:var(--muted);max-width:44ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+  @media (max-width:640px){ .hero{padding:56px 0 48px} .hero-foot{margin-top:28px} .hero-cta{width:100%} .hero-cta .btn{flex:1 1 100%} }
 
-  /* tools */
-  .tools{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0}
-  .tools .mono{text-align:center;margin-bottom:22px}
-  .track{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 38px}
-  .tool{display:inline-flex;align-items:center;gap:9px;color:var(--muted);font-weight:500;font-size:.98rem;white-space:nowrap}
-  .tool img{width:22px;height:22px;filter:grayscale(1) brightness(1.6);opacity:.75}
-  .tool.dup{display:none}
-  @media (max-width:640px){ .tools{padding:26px 0} .track{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding:0 18px;gap:26px} .track::-webkit-scrollbar{display:none} }
+  /* scrolling strip */
+  main{overflow-x:clip}
+  .strip{background:var(--ink);color:var(--paper);overflow:hidden;border-block:2px solid var(--ink);transform:rotate(-1deg);margin:8px -10px 0}
+  .strip-track{display:flex;width:max-content;animation:strip 42s linear infinite}
+  .strip span{display:inline-flex;align-items:center;gap:22px;padding:18px 11px;font-family:var(--display);font-weight:700;font-size:clamp(1.2rem,2.2vw,1.7rem);letter-spacing:-.02em;white-space:nowrap}
+  .strip span::after{content:"\2726";font-size:.8em}
+  .strip span:nth-child(4n+1)::after{color:var(--orange)}
+  .strip span:nth-child(4n+2)::after{color:var(--blue)}
+  .strip span:nth-child(4n+3)::after{color:var(--green)}
+  .strip span:nth-child(4n)::after{color:var(--pink)}
+  @keyframes strip{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){ .strip-track{animation:none} }
 
-  /* story sections */
-  section.story{padding:110px 0 0}
-  @media (max-width:640px){ section.story{padding:64px 0 0} }
-  .story h2{font-size:clamp(2.2rem,5vw,4rem);max-width:15ch;margin-left:auto;margin-right:0}
-  .story.left h2{margin-left:0;margin-right:auto}
-  .story-grid{display:grid;grid-template-columns:.75fr 1.6fr;gap:40px;align-items:end;margin-top:48px}
-  .story.left .story-grid{grid-template-columns:1.6fr .75fr}
-  .story.left .story-copy{order:2}
-  .story-copy .claim{font-size:1.45rem;line-height:1.3;letter-spacing:-.02em;color:#fff}
-  .story-copy .claim span{color:var(--muted)}
-  .story-copy .mono{margin:28px 0 10px}
-  .story-copy ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;color:#fff}
-  .story-copy .arrow{margin-top:18px}
-  @media (max-width:860px){ .story h2{margin:0} .story-grid,.story.left .story-grid{grid-template-columns:1fr;gap:28px;margin-top:28px} .story.left .story-copy{order:0} }
+  /* what we build */
+  .work{padding:120px 0 0}
+  @media (max-width:640px){ .work{padding:72px 0 0} }
+  .work-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+  .work-head h2{font-size:clamp(2.4rem,5.6vw,4.4rem);color:var(--ink)}
+  .work-head p{color:var(--muted);max-width:36ch}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+  .card{position:relative;display:flex;flex-direction:column;gap:16px;border:2px solid var(--ink);border-radius:28px;padding:36px;min-width:0;overflow:hidden}
+  .card.o{background:var(--orange);color:var(--ink)}
+  .card.b{background:var(--blue);color:#fff}
+  .card .num{font-family:var(--mono);font-size:.9rem;font-weight:500;opacity:.8}
+  .card h3{font-size:clamp(2.2rem,4.4vw,3.4rem)}
+  .card > p{font-size:1.08rem;max-width:40ch;opacity:.92}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:4px 0 0;padding:0}
+  .chips li{border:2px solid currentColor;border-radius:999px;padding:5px 13px;font-weight:600;font-size:.88rem}
+  .card .frame{margin:14px 0 6px;transform:rotate(-1.5deg)}
+  .card.b .frame{transform:rotate(1.5deg)}
+  .card .btn{align-self:flex-start;margin-top:auto}
+  @media (max-width:900px){ .cards{grid-template-columns:1fr} }
+  @media (max-width:480px){ .card{padding:24px;border-radius:22px} .card .btn{align-self:stretch} }
+
+  /* tiles */
+  .tiles3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+  .t3{border:2px solid var(--ink);border-radius:28px;padding:32px;display:flex;flex-direction:column;gap:12px;min-height:240px}
+  .t3 .mark3{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-weight:800;font-family:var(--display);background:var(--paper)}
+  .t3 h3{font-size:clamp(1.7rem,2.6vw,2.2rem);margin-top:auto}
+  .t3 p{font-size:1rem}
+  .t3.g{background:var(--green);color:var(--ink)}
+  .t3.p{background:var(--pink);color:var(--ink)}
+  .t3.w{background:#fff;color:var(--ink)}
+  @media (max-width:900px){ .tiles3{grid-template-columns:1fr} .t3{min-height:0} .t3 h3{margin-top:14px} }
+  @media (max-width:480px){ .t3{padding:24px;border-radius:22px} }
 
   /* product frames */
-  .frame{border:1px solid var(--line-2);border-radius:14px;background:var(--panel);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
-  .frame-top{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line);font-size:.82rem;color:var(--muted)}
-  .frame-top i{width:9px;height:9px;border-radius:50%;background:var(--line-2)}
-  .frame-top b{font-weight:500;color:#fff;margin-left:6px}
-  .frame-top .pill{margin-left:auto;font-family:var(--mono);font-size:.72rem;border:1px solid var(--line-2);border-radius:999px;padding:2px 8px}
-  .portal{display:grid;grid-template-columns:180px 1fr;min-height:360px}
-  .side{border-right:1px solid var(--line);padding:14px 10px;display:flex;flex-direction:column;gap:2px;font-size:.86rem;color:var(--muted)}
-  .side b{color:#fff;font-weight:600;padding:2px 8px 12px}
+  .frame{border:2px solid var(--ink);border-radius:16px;background:#fff;color:var(--text);overflow:hidden;box-shadow:6px 6px 0 var(--ink)}
+  .frame-top{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:2px solid var(--ink);font-size:.84rem;color:var(--muted);background:var(--paper)}
+  .frame-top i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--ink)}
+  .frame-top i:nth-child(1){background:var(--pink)} .frame-top i:nth-child(2){background:var(--orange)} .frame-top i:nth-child(3){background:var(--green)}
+  .frame-top b{font-weight:700;color:var(--ink);margin-left:6px;white-space:nowrap}
+  .frame-top .pill{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--muted);border:1.5px solid var(--ink);border-radius:999px;padding:1px 8px}
+  .portal{display:grid;grid-template-columns:180px 1fr;min-height:340px}
+  .side{border-right:2px solid var(--ink);padding:14px 10px;display:flex;flex-direction:column;gap:2px;font-size:.88rem;color:var(--muted);background:#FBF9F4}
+  .side b{color:var(--ink);font-weight:700;padding:2px 8px 12px}
   .side span{padding:7px 8px;border-radius:8px}
-  .side span.on{background:var(--panel-2);color:#fff}
+  .side span.on{background:var(--ink);color:#fff}
   .main{padding:18px 20px;display:flex;flex-direction:column;gap:14px;min-width:0}
-  .main h4{margin:0;font-weight:500;font-size:1.1rem;color:#fff;letter-spacing:-.02em}
+  .main h4{font-size:1.2rem;color:var(--ink);letter-spacing:-.02em}
   .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  .tile{border:1px solid var(--line);border-radius:10px;padding:12px}
-  .tile small{display:block;color:var(--dim);font-size:.76rem}
-  .tile b{font-weight:500;font-size:1.3rem;color:#fff;letter-spacing:-.02em}
-  table{width:100%;border-collapse:collapse;font-size:.86rem}
-  th{text-align:left;font-weight:400;color:var(--dim);padding:8px 10px;border-bottom:1px solid var(--line)}
-  td{padding:10px;border-bottom:1px solid var(--line);color:var(--text)}
+  .tile{border:1.5px solid var(--line);border-radius:12px;padding:12px}
+  .tile small{display:block;color:var(--muted);font-size:.76rem}
+  .tile b{font-family:var(--display);font-weight:800;font-size:1.4rem;color:var(--ink);letter-spacing:-.02em}
+  table{width:100%;border-collapse:collapse;font-size:.88rem}
+  th{text-align:left;font-weight:500;color:var(--muted);padding:8px 10px;border-bottom:1.5px solid var(--line)}
+  td{padding:10px;border-bottom:1.5px solid var(--line);color:var(--text)}
   tr:last-child td{border-bottom:0}
-  .st{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
-  .st::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;background:var(--c,#3ECF8E);vertical-align:1px}
-  .log{list-style:none;margin:0;padding:6px 0}
-  .log li{display:grid;grid-template-columns:62px 1fr auto;gap:14px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);font-size:.9rem}
+  .st{font-family:var(--mono);font-size:.74rem;color:var(--muted);white-space:nowrap}
+  .st::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;background:var(--c,#22B455);vertical-align:0}
+  .log{list-style:none;margin:0;padding:4px 0}
+  .log li{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:11px 16px;border-bottom:1.5px solid var(--line);font-size:.9rem}
   .log li:last-child{border-bottom:0}
-  .log time{font-family:var(--mono);font-size:.76rem;color:var(--dim)}
-  .frame-foot{padding:10px 14px;border-top:1px solid var(--line);font-family:var(--mono);font-size:.72rem;color:var(--dim)}
+  .log time{font-family:var(--mono);font-size:.76rem;color:var(--muted)}
+  .frame-foot{padding:10px 14px;border-top:1.5px solid var(--line);font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+  .card .main{padding:16px}
   @media (max-width:640px){
     .portal{grid-template-columns:1fr} .side{display:none} .main{padding:14px}
     .tiles{grid-template-columns:1fr 1fr} .tiles .tile:last-child{display:none}
     th:nth-child(2),td:nth-child(2){display:none}
     .log li{grid-template-columns:1fr auto;gap:2px 10px} .log time{grid-column:1/-1}
   }
-
-  /* grid blocks */
-  section.block{padding:110px 0 0}
-  @media (max-width:640px){ section.block{padding:72px 0 0} }
-  .block h2{font-size:clamp(2.2rem,5vw,3.6rem);max-width:18ch}
-  .block .sub{color:var(--muted);font-size:1.1rem;margin-top:16px;max-width:52ch}
-  .fit{list-style:none;margin:44px 0 0;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-  .fit li{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:22px 24px;border-bottom:1px solid var(--line)}
-  .fit li:last-child{border-bottom:0}
-  .fit b{font-weight:500;color:#fff}
-  .fit span{color:var(--muted)}
-  @media (max-width:640px){ .fit{margin-top:28px} .fit li{grid-template-columns:1fr;gap:4px;padding:18px} }
-  .cells{display:grid;grid-template-columns:repeat(3,1fr);margin-top:44px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-  .cell{padding:30px 26px;border-right:1px solid var(--line)}
-  .cell:last-child{border-right:0}
-  .cell .mono{display:block;margin-bottom:28px}
-  .cell h3{font-size:1.35rem;letter-spacing:-.03em}
-  .cell p{color:var(--muted);margin-top:8px}
-  @media (max-width:820px){ .cells{grid-template-columns:1fr;margin-top:28px} .cell{border-right:0;border-bottom:1px solid var(--line);padding:24px 20px} .cell:last-child{border-bottom:0} .cell .mono{margin-bottom:14px} }
-  .founder{display:flex;gap:16px;align-items:center;margin-top:28px;color:var(--muted)}
-  .founder i{flex:0 0 44px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;font-style:normal;color:#fff;font-size:.9rem}
-  .founder p{color:#fff;max-width:64ch}
-  .founder small{display:block;color:var(--dim);margin-top:2px}
-
-  details{border-bottom:1px solid var(--line)}
-  .faq{margin-top:36px;border-top:1px solid var(--line);max-width:820px}
-  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;color:#fff;font-size:1.04rem}
-  summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";color:var(--dim);font-size:1.3rem;line-height:1}
-  details[open] summary::after{content:"\2212"}
-  details p{color:var(--muted);padding:0 0 22px;max-width:68ch}
+  @media (min-width:901px){ .card th:nth-child(2),.card td:nth-child(2){display:none} }
 
   /* contact */
-  .cta{position:relative;margin-top:110px;padding:110px 0;border-top:1px solid var(--line);overflow:hidden}
-  .cta::before{content:"";position:absolute;left:50%;top:-260px;width:900px;height:520px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(255,255,255,.12),transparent 65%);pointer-events:none}
+  .cta{margin-top:120px;padding:110px 0;background:var(--ink);color:var(--paper)}
   @media (max-width:640px){ .cta{margin-top:72px;padding:64px 0} }
-  .cta-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-  @media (max-width:860px){ .cta-grid{grid-template-columns:1fr;gap:28px} }
-  .cta h2{font-size:clamp(2.2rem,5vw,3.6rem)}
-  .cta .sub{color:var(--muted);font-size:1.08rem;margin-top:16px;max-width:44ch}
-  .cta .alt{margin-top:20px;color:var(--muted)}
-  .cta .alt a{display:inline-block;color:#fff;border-bottom:1px solid var(--line-2);padding:11px 0 2px}
-  form{border:1px solid var(--line-2);border-radius:14px;padding:26px;background:var(--panel)}
-  @media (max-width:480px){ form{padding:18px} }
+  .cta-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:start}
+  @media (max-width:900px){ .cta-grid{grid-template-columns:1fr;gap:32px} }
+  .cta h2{font-size:clamp(2.6rem,6vw,5rem);line-height:.95}
+  .cta h2 em{font-style:normal;color:var(--orange)}
+  .cta .sub{color:#CFC9BD;font-size:1.12rem;margin-top:22px;max-width:40ch}
+  form{border:2px solid var(--paper);border-radius:24px;padding:28px;background:var(--paper);color:var(--text)}
+  @media (max-width:480px){ form{padding:18px;border-radius:18px} }
   .field{margin-bottom:16px}
   .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   @media (max-width:480px){ .row{grid-template-columns:1fr} }
-  label{display:block;font-size:.84rem;color:var(--muted);margin-bottom:6px}
-  input,select,textarea{width:100%;font:inherit;font-size:16px;color:#fff;background:#000;border:1px solid var(--line-2);border-radius:10px;padding:11px 13px}
-  input::placeholder,textarea::placeholder{color:#555}
-  select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A1A1A1' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:16px;padding-right:38px}
-  input:focus,select:focus,textarea:focus{outline:none;border-color:#fff}
+  label{display:block;font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+  input,select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:12px;padding:11px 13px}
+  input::placeholder,textarea::placeholder{color:#A39E94}
+  select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230F0F0F' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px;padding-right:40px}
+  input:focus,select:focus,textarea:focus{outline:none;box-shadow:3px 3px 0 var(--blue)}
   textarea{min-height:100px;resize:vertical}
-  .form-submit{width:100%;margin-top:4px}
-  .form-note{margin-top:10px;font-size:.82rem;color:var(--dim);text-align:center}
-  .form-ok{display:none;margin-top:14px;border:1px solid var(--line-2);border-radius:10px;padding:14px;font-size:.95rem}
+  .form-submit{width:100%;margin-top:6px}
+  .form-note{margin-top:12px;font-size:.84rem;color:var(--muted);text-align:center}
+  .form-ok{display:none;margin-top:14px;border:2px solid var(--ink);border-radius:12px;padding:14px;font-size:.95rem;background:#fff}
   .form-ok.show{display:block}
 
-  footer{border-top:1px solid var(--line);padding:36px 0 30px;color:var(--dim);font-size:.88rem}
+  footer{background:var(--ink);color:#9C978D;border-top:1px solid #2A2A2A;padding:28px 0;font-size:.9rem}
   .foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px}
   .foot nav{display:flex;flex-wrap:wrap;gap:0 22px}
   footer a{display:inline-block;padding:12px 0}
-  footer a:hover{color:#fff}
+  footer a:hover{color:var(--paper)}
 
   /* ---------- page transition: fade and swipe between pages ---------- */
   @view-transition{navigation:auto}
@@ -238,95 +226,95 @@
 <body>
 <header class="nav">
   <div class="nav-in">
-    <a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="5" fill="#fff"/><g stroke-width="2.5" stroke-linecap="round"><line x1="16" y1="4" x2="16" y2="10" stroke="#FF6A2B"/><line x1="22" y1="16" x2="28" y2="16" stroke="#16A34A"/><line x1="16" y1="22" x2="16" y2="28" stroke="#1F63F0"/><line x1="4" y1="16" x2="10" y2="16" stroke="#FF3D8B"/></g></svg>Tailwind Solutions</a>
+    <a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="5" fill="#111"/><g stroke-width="2.5" stroke-linecap="round"><line x1="16" y1="4" x2="16" y2="10" stroke="#FF6A2B"/><line x1="22" y1="16" x2="28" y2="16" stroke="#16A34A"/><line x1="16" y1="22" x2="16" y2="28" stroke="#1F63F0"/><line x1="4" y1="16" x2="10" y2="16" stroke="#FF3D8B"/></g></svg>Tailwind Solutions</a>
     <nav class="nav-links">
       <a href="#apps">Internal apps</a>
       <a href="#agents">AI agents</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-white" href="#contact">Email us</a>
+      <a class="btn btn-primary" href="#contact">Email us</a>
     </div>
   </div>
 </header>
 
 <main id="top">
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <h1>AI agents and apps, built for you</h1>
+    <div class="wrap">
+      <h1>We build the <span class="hl o">AI agents</span> and <span class="hl b">apps</span> your team needs.</h1>
+      <div class="hero-foot">
+        <p class="sub">Tailwind Solutions designs, builds and looks after AI agents and internal web apps for growing businesses. Done for you, start to finish.</p>
         <div class="hero-cta">
-          <a class="btn btn-white" href="#contact">Email us</a>
-          <a class="btn btn-dark" href="#apps">See what we build</a>
+          <a class="btn btn-primary" href="#contact">Email us</a>
+          <a class="btn btn-ghost" href="#work">See what we build</a>
         </div>
-      </div>
-      <div class="mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="5" fill="#000" stroke="#fff" stroke-opacity=".9" stroke-width=".5"/><g stroke-width="2.2" stroke-linecap="round"><line x1="16" y1="4" x2="16" y2="9.6" stroke="#FF6A2B"/><line x1="22.4" y1="16" x2="28" y2="16" stroke="#16A34A"/><line x1="16" y1="22.4" x2="16" y2="28" stroke="#1F63F0"/><line x1="4" y1="16" x2="9.6" y2="16" stroke="#FF3D8B"/></g></svg>
       </div>
     </div>
   </section>
 
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track">
+      <span>Client portals</span><span>Inbox agents</span><span>CRMs</span><span>Lead follow up</span><span>Dashboards</span><span>Invoice capture</span><span>Customer support</span><span>Internal tools</span>
+      <span>Client portals</span><span>Inbox agents</span><span>CRMs</span><span>Lead follow up</span><span>Dashboards</span><span>Invoice capture</span><span>Customer support</span><span>Internal tools</span>
+    </div>
+  </div>
 
-  <section class="story" id="apps">
+  <section class="work" id="work">
     <div class="wrap">
-      <h2>Internal apps that run your business</h2>
-      <div class="story-grid">
-        <div class="story-copy">
-          <p class="claim">Your clients log in and see everything. <span>Projects, invoices, files and messages, in one place.</span></p>
-          <p class="mono">What we build</p>
-          <ul><li>Client portals</li><li>CRMs and sales pipelines</li><li>Dashboards and reporting</li><li>Inventory and intranets</li></ul>
-          <a class="arrow" href="/apps">See app examples</a>
-        </div>
-        <div class="frame" aria-label="Illustration of a client portal">
-          <div class="frame-top"><i></i><i></i><i></i><b>Client portal</b><span class="pill">Illustrative</span></div>
-          <div class="portal">
-            <div class="side"><b>Dube &amp; Co</b><span class="on">Dashboard</span><span>Projects</span><span>Invoices</span><span>Files</span><span>Messages</span></div>
+      <div class="work-head">
+        <h2>What we build</h2>
+        <p>Two things, done properly. Most clients start with one and add the other later.</p>
+      </div>
+      <div class="cards">
+        <article class="card o" id="apps">
+          <span class="num">01</span>
+          <h3>Internal apps</h3>
+          <p>Client portals, CRMs, dashboards and tools that run your business, built around how you already work.</p>
+          <ul class="chips"><li>Client portals</li><li>CRMs</li><li>Dashboards</li><li>Intranets</li></ul>
+          <div class="frame" aria-label="Illustration of a client portal">
+            <div class="frame-top"><i></i><i></i><i></i><b>Client portal</b><span class="pill">Illustrative</span></div>
             <div class="main">
               <h4>Good morning, Jane</h4>
               <div class="tiles"><div class="tile"><small>Open projects</small><b>4</b></div><div class="tile"><small>Invoices due</small><b>$1,840</b></div><div class="tile"><small>Files shared</small><b>26</b></div></div>
               <table><thead><tr><th>Project</th><th>Owner</th><th>Due</th><th>Status</th></tr></thead><tbody>
                 <tr><td>Website refresh</td><td>Thabo M.</td><td>14 Nov</td><td><span class="st">On track</span></td></tr>
-                <tr><td>Quarterly audit</td><td>Priya N.</td><td>28 Nov</td><td><span class="st" style="--c:#F5A524">Waiting</span></td></tr>
-                <tr><td>Office fit out</td><td>Sipho K.</td><td>9 Dec</td><td><span class="st" style="--c:#8B8BFF">Planning</span></td></tr>
+                <tr><td>Quarterly audit</td><td>Priya N.</td><td>28 Nov</td><td><span class="st" style="--c:#FF6A2B">Waiting</span></td></tr>
+                <tr><td>Office fit out</td><td>Sipho K.</td><td>9 Dec</td><td><span class="st" style="--c:#1F63F0">Planning</span></td></tr>
               </tbody></table>
             </div>
           </div>
-        </div>
+          <a class="btn btn-light" href="/apps">See app examples &rarr;</a>
+        </article>
+
+        <article class="card b" id="agents">
+          <span class="num">02</span>
+          <h3>AI agents</h3>
+          <p>Agents that answer email, follow up leads and capture invoices, so your team can focus on the work that matters.</p>
+          <ul class="chips"><li>Inbox</li><li>Lead follow up</li><li>Support</li><li>Invoices</li></ul>
+          <div class="frame" aria-label="Illustration of an AI agent activity log">
+            <div class="frame-top"><i></i><i></i><i></i><b>Agent activity</b><span class="pill">Illustrative</span></div>
+            <ul class="log">
+              <li><time>08:01</time><span>Replied to Sarah Naidoo about delivery times</span><span class="st">Done</span></li>
+              <li><time>08:04</time><span>Captured invoice from Mokoena Supplies, $1,482</span><span class="st">Done</span></li>
+              <li><time>08:12</time><span>Sorted 38 emails and flagged 3 for you</span><span class="st">Done</span></li>
+              <li><time>08:14</time><span>Refund of $185 waiting for your approval</span><span class="st" style="--c:#FF6A2B">Waiting</span></li>
+            </ul>
+          </div>
+          <a class="btn btn-light" href="/agents">See agent examples &rarr;</a>
+        </article>
+      </div>
+
+      <div class="tiles3">
+        <div class="t3 g"><span class="mark3">1</span><h3>Done for you</h3><p>We plan, build, launch and look after it. No technical people needed on your side.</p></div>
+        <div class="t3 p"><span class="mark3">2</span><h3>Built around you</h3><p>Your process, your tools, your branding. Nothing off the shelf.</p></div>
+        <div class="t3 w"><span class="mark3">3</span><h3>Yours to keep</h3><p>You own the app and the data, set up under your own accounts.</p></div>
       </div>
     </div>
   </section>
-
-  <section class="story left" id="agents">
-    <div class="wrap">
-      <h2>AI agents that take work off your plate</h2>
-      <div class="story-grid">
-        <div class="story-copy">
-          <p class="claim">Every new lead gets a reply in minutes. <span>Emails sorted, invoices captured, calls booked.</span></p>
-          <p class="mono">What we build</p>
-          <ul><li>Email and inbox agents</li><li>Lead follow up</li><li>Customer support</li><li>Invoice capture and scheduling</li></ul>
-          <a class="arrow" href="/agents">See agent examples</a>
-        </div>
-        <div class="frame" aria-label="Illustration of an AI agent activity log">
-          <div class="frame-top"><i></i><i></i><i></i><b>Agent activity</b><span class="pill">Illustrative</span></div>
-          <ul class="log">
-            <li><time>08:01</time><span>Replied to Sarah Naidoo about delivery times</span><span class="st">Done</span></li>
-            <li><time>08:04</time><span>Captured invoice from Mokoena Supplies, $1,482</span><span class="st">Done</span></li>
-            <li><time>08:09</time><span>Booked a call with Thandi for Thursday 10:00</span><span class="st">Done</span></li>
-            <li><time>08:12</time><span>Sorted 38 emails and flagged 3 for you</span><span class="st">Done</span></li>
-            <li><time>08:14</time><span>Refund of $185 waiting for your approval</span><span class="st" style="--c:#F5A524">Waiting</span></li>
-          </ul>
-          <div class="frame-foot">Anything sensitive waits for a yes from your team.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
 
   <section class="cta" id="contact">
     <div class="wrap cta-grid">
       <div>
-        <h2>Tell us what is eating your team's time.</h2>
+        <h2>Got work that eats your week? <em>Email us.</em></h2>
         <p class="sub">Send us an email about what you need. We will reply within one business day and take it from there.</p>
       </div>
       <form id="contactForm" novalidate>
@@ -362,7 +350,7 @@
             </select>
         </div>
         <div class="field"><label for="f-msg">Tell us more (optional)</label><textarea id="f-msg" name="message" placeholder="For example: we need a portal where clients can see their invoices and project updates..."></textarea></div>
-        <button type="submit" class="btn btn-white form-submit">Send email</button>
+        <button type="submit" class="btn btn-primary form-submit">Send email</button>
         <p class="form-note">This opens your email app with the details ready to send.</p>
         <div class="form-ok" id="formOk" role="status"></div>
       </form>
