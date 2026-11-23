@@ -4,76 +4,98 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Privacy Policy for Tailwind Solutions.">
+<meta name="theme-color" content="#F6F7F9">
 <title>Tailwind</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjIuNSAyLjUgMjcgMjciPjxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjUiIGZpbGw9IiMwRTBFMTIiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGcgc3Ryb2tlLXdpZHRoPSIyLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PGxpbmUgeDE9IjE2IiB5MT0iNCIgeDI9IjE2IiB5Mj0iMTAiIHN0cm9rZT0iI0ZGNkEyQiIvPjxsaW5lIHgxPSIyMiIgeTE9IjE2IiB4Mj0iMjgiIHkyPSIxNiIgc3Ryb2tlPSIjMTZBMzRBIi8+PGxpbmUgeDE9IjE2IiB5MT0iMjIiIHgyPSIxNiIgeTI9IjI4IiBzdHJva2U9IiMxRjYzRjAiLz48bGluZSB4MT0iNCIgeTE9IjE2IiB4Mj0iMTAiIHkyPSIxNiIgc3Ryb2tlPSIjRkYzRDhCIi8+PC9nPjwvc3ZnPg==">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&display=swap">
 
 <style>
   :root{
-    --bg:#FFFFFF;--surface:#F7F7F5;
-    --line:#E7E7E4;--line-2:#D6D6D2;
-    --text:#1F1F1F;--text-2:#5C5C5C;--muted:#8A8A8A;
-    --white:#111111;--ink:#FFFFFF;--radius:12px;
-    --sans:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-    --mono:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+    color-scheme:light;
+    --bg:#F6F7F9;
+    --panel:#FFFFFF;
+    --line:#E2E5EA;
+    --line-2:#CBD1D9;
+    --ink:#0A0C10;
+    --text:#2A2F37;
+    --muted:#5B6371;
+    --dim:#8A92A0;
+    --accent:#1F63F0;
+    --accent-soft:#E8EFFE;
+    --orange:#FF6A2B;
+    --green:#22B455;
+    --maxw:1200px;
+    --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+    --mono:Arial,Helvetica,sans-serif;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
-  a{color:inherit}
-  :focus-visible{outline:2px solid var(--white);outline-offset:3px;border-radius:5px}
-  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:-.04em;line-height:1.02;color:var(--ink);text-wrap:balance}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+  @media (max-width:480px){ .wrap{padding:0 16px} }
+  .mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.02em;text-transform:uppercase;color:var(--dim)}
+  main{overflow-x:clip}
 
-  header.nav{position:sticky;top:12px;z-index:60;width:calc(100% - 32px);max-width:812px;margin:12px auto 0;background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(14,14,18,.09);border-radius:18px;box-shadow:0 8px 28px rgba(30,20,60,.08)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:760px;margin:0 auto;padding:0 24px}
-  .brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:1.06rem;letter-spacing:-.03em;color:var(--white);text-decoration:none}
-  .brand .mk{width:20px;height:20px;border-radius:6px;background:var(--white);display:grid;place-items:center}
-  .brand .mk svg{width:14px;height:14px}
-  .back{font-family:var(--mono);font-weight:500;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-2);text-decoration:none}
-  .back:hover{color:var(--white)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 22px;border-radius:10px;font-family:var(--sans);font-weight:600;font-size:.98rem;border:1px solid transparent;cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease}
+  .btn-primary{background:var(--ink);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 1px 2px rgba(10,12,16,.2)}
+  .btn-primary:hover{background:var(--accent)}
+  .btn-ghost{background:var(--panel);color:var(--ink);border-color:var(--line-2)}
+  .btn-ghost:hover{border-color:var(--ink)}
+  .arrow{display:inline-flex;align-items:center;gap:8px;font-weight:600;min-height:44px}
+  .arrow::after{content:"\2192";transition:transform .15s ease}
+  .arrow:hover::after{transform:translateX(3px)}
 
-  .head{padding:72px 0 18px}
-  .kicker{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-  h1{font-family:var(--sans);color:var(--white);font-weight:600;font-size:clamp(2.2rem,6vw,3.2rem);letter-spacing:-.04em;margin:16px 0 0}
-  .updated{margin-top:14px;font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+  /* top bar */
+  header.nav{position:sticky;top:12px;z-index:50;width:calc(100% - 32px);max-width:var(--maxw);margin:12px auto 0;background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 30px rgba(10,12,16,.06)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:60px;padding:0 8px 0 16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.06rem;letter-spacing:-.03em;color:var(--ink);padding:10px 0}
+  .brand svg{width:22px;height:22px}
+  .nav-links{display:flex;gap:2px}
+  .nav-links a{font-weight:500;font-size:.93rem;color:var(--muted);padding:8px 14px;border-radius:8px}
+  .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--ink);background:#EEF0F3}
+  .nav .btn{min-height:42px;padding:0 16px;font-size:.9rem}
+  @media (max-width:760px){ .nav-links{display:none} }
+  @media (max-width:640px){ header.nav{top:8px;margin-top:8px;width:calc(100% - 16px)} .nav-in{padding:0 6px 0 12px} }
 
-  .note{margin:26px 0 8px;border:1px solid var(--line-2);border-radius:var(--radius);padding:18px 20px;background:var(--surface)}
-  .note .nl{font-family:var(--mono);font-weight:500;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:8px}
-  .note p{margin:0;color:var(--text-2);font-size:.94rem;line-height:1.55}
+  /* privacy page */
+  .legal{max-width:780px;margin:0 auto;padding:0 32px}
+  @media (max-width:480px){ .legal{padding:0 16px} }
+  .head{padding:80px 0 8px}
+  .back{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:500;color:var(--muted);font-size:.93rem;margin-bottom:14px}
+  .back:hover{color:var(--ink)}
+  .head h1{margin-top:14px;font-size:clamp(2.4rem,6vw,3.8rem);letter-spacing:-.05em}
+  .updated{margin-top:14px;font-family:var(--mono);font-size:.84rem;color:var(--dim)}
+  .note{margin:30px 0 8px;border:1px solid #F3D9C9;border-radius:12px;padding:18px 20px;background:#FFF6F1}
+  .note .mono{color:#B4521F;font-weight:700;display:block;margin-bottom:6px}
+  .note p{color:var(--text);font-size:.95rem;line-height:1.55}
+  .doc{margin:32px 0 104px;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  section.blk{padding:30px 32px;border-top:1px solid var(--line)}
+  section.blk:first-child{border-top:0}
+  @media (max-width:480px){ section.blk{padding:24px 18px} .head{padding-top:48px} .doc{margin-bottom:64px} }
+  .doc h2{font-size:1.3rem;letter-spacing:-.03em;margin:0 0 12px;display:flex;gap:14px;align-items:baseline}
+  .doc h2 .n{font-family:var(--mono);font-size:.82rem;color:var(--accent);font-weight:700}
+  .doc p{margin:0 0 14px;color:var(--muted)}
+  .doc p:last-child{margin-bottom:0}
+  .doc ul{margin:0 0 14px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+  .doc li{color:var(--muted);padding-left:20px;position:relative}
+  .doc li::before{content:"";position:absolute;left:2px;top:.66em;width:6px;height:6px;border-radius:2px;background:var(--line-2)}
+  .doc strong{color:var(--ink);font-weight:600}
+  .ph{background:#F3F4F6;border:1px solid var(--line);border-radius:4px;padding:0 .3em;color:var(--ink);font-family:var(--mono);font-size:.88em}
+  a.link{color:var(--accent);border-bottom:1px solid #BFD3FC}
+  a.link:hover{border-color:var(--accent)}
 
-  main{padding:24px 0 40px}
-  section.blk{padding:30px 0;border-top:1px solid var(--line)}
-  section.blk:first-of-type{border-top:none}
-  h2{font-family:var(--sans);color:var(--white);font-weight:600;font-size:1.3rem;letter-spacing:-.03em;margin:0 0 12px;display:flex;gap:14px;align-items:baseline}
-  h2 .n{font-family:var(--mono);font-size:.9rem;color:var(--muted);font-weight:500}
-  p{margin:0 0 14px;color:var(--text-2)}
-  p:last-child{margin-bottom:0}
-  ul{margin:0 0 14px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px}
-  li{color:var(--text-2);padding-left:20px;position:relative}
-  li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--line-2)}
-  strong{color:var(--white);font-weight:600}
-  .ph{background:var(--surface);border:1px solid var(--line-2);border-radius:4px;padding:0 .3em;color:var(--white);font-family:var(--mono);font-size:.9em}
-  a.link{color:var(--white);border-bottom:1px solid var(--line-2);text-decoration:none;padding-bottom:1px}
-  a.link:hover{border-color:var(--white)}
-
-  footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--muted);font-size:.85rem}
-  footer .fin{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;width:100%}
-  footer a{color:var(--text-2);text-decoration:none}
-  footer a:hover{color:var(--white)}
-  /* ---------- phones ---------- */
-  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:88px}
-  @media (max-width:640px){
-    .brand{padding:8px 0}
-    .back{display:inline-block;padding:13px 0;font-size:.8rem}
-    .kicker,.note .nl{font-size:.75rem}
-    a.link{display:inline-block;padding:13px 0 5px}
-    footer a{display:inline-block;padding:13px 0;line-height:18px}
-    .head{padding-top:40px}
-  }
-
-  @media (max-width:640px){ header.nav{top:8px;margin-top:8px;width:calc(100% - 16px);border-radius:16px} }
+  footer{border-top:1px solid var(--line);padding:26px 0;font-size:.88rem;color:var(--muted)}
+  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px}
+  .foot nav{display:flex;flex-wrap:wrap;gap:0 22px}
+  footer a{display:inline-block;padding:12px 0}
+  footer a:hover{color:var(--ink)}
 
   /* ---------- page transition: fade and swipe between pages ---------- */
   @view-transition{navigation:auto}
@@ -87,6 +109,7 @@
   @keyframes vt-in-right{from{opacity:0;transform:translateX(56px)}}
   @keyframes vt-out-right{to{opacity:0;transform:translateX(56px)}}
   @keyframes vt-in-left{from{opacity:0;transform:translateX(-56px)}}
+  header.nav{view-transition-name:site-nav}
   @media (prefers-reduced-motion:reduce){
     ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
   }
@@ -112,24 +135,30 @@
 <body>
 <header class="nav">
   <div class="nav-in">
-    <a class="brand" href="/">Tailwind Solutions</a>
-    <a class="back" href="/">&larr; Back to home</a>
+    <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="5" fill="#0A0C10"/><g stroke-width="2.5" stroke-linecap="round"><line x1="16" y1="4" x2="16" y2="10" stroke="#FF6A2B"/><line x1="22" y1="16" x2="28" y2="16" stroke="#16A34A"/><line x1="16" y1="22" x2="16" y2="28" stroke="#1F63F0"/><line x1="4" y1="16" x2="10" y2="16" stroke="#FF3D8B"/></g></svg>Tailwind Solutions</a>
+    <nav class="nav-links">
+      <a href="/apps">Internal apps</a>
+      <a href="/agents">AI agents</a>
+      <a href="/#how">How we work</a>
+    </nav>
+    <a class="btn btn-primary" href="/#contact">Email us</a>
   </div>
 </header>
 
-<div class="wrap">
+<div class="legal">
   <div class="head">
-    <div class="kicker">Legal</div>
+    <a class="back" href="/">&larr; Back to home</a><br>
+    <span class="mono">Legal</span>
     <h1>Privacy Policy</h1>
     <div class="updated">Last updated: 22 September 2026</div>
   </div>
 
   <div class="note">
-    <div class="nl">Please read</div>
+    <span class="mono">Please read</span>
     <p>This policy is a plain English starting template. Before you publish it, have it reviewed by a qualified professional and tailored to your actual data practices, business details, and the laws that apply to you. It is not legal advice.</p>
   </div>
 
-  <main>
+  <main class="doc">
     <section class="blk">
       <h2><span class="n">01</span>Who we are</h2>
       <p>Tailwind Solutions ("we", "us", "our") builds AI agents and custom internal apps for businesses, such as agents that handle email, admin, lead follow up and customer support, and apps such as client portals, CRMs and dashboards. This policy explains how we handle personal information when you visit our website, contact us, or work with us.</p>
@@ -173,7 +202,7 @@
     <section class="blk">
       <h2><span class="n">06</span>Sharing</h2>
       <p>We do not sell personal information. We may share it with trusted third party service providers who help us deliver and run our services, and who are bound by confidentiality and data protection obligations. We may also disclose information where required by law.</p>
-      <p>A current list of the service providers we rely on is available on request: <a class="link" href="mailto:thobelanicele16@gmail.com">thobelanicele16@gmail.com</a>.</p>
+      <p>A current list of the service providers we rely on is available on request. <a class="link" href="/#contact">Email us</a> and we will send it to you.</p>
     </section>
 
     <section class="blk">
@@ -209,15 +238,20 @@
 
     <section class="blk">
       <h2><span class="n">13</span>Contact us</h2>
-      <p>Questions about this policy or your information? Reach us at <a class="link" href="mailto:thobelanicele16@gmail.com">thobelanicele16@gmail.com</a>.</p>
+      <p>Questions about this policy or your information? <a class="link" href="/#contact">Email us</a> using the form on our homepage and we will reply within one business day.</p>
     </section>
   </main>
 </div>
 
 <footer>
-  <div class="wrap fin">
-    <span>&copy; 2026 Tailwind Solutions. All rights reserved.</span>
-    <a href="/">Back to home</a>
+  <div class="wrap foot">
+    <span>&copy; 2026 Tailwind Solutions</span>
+    <nav>
+      <a href="/apps">Internal apps</a>
+      <a href="/agents">AI agents</a>
+      <a href="/#contact">Email us</a>
+      <a href="/privacy" aria-current="page">Privacy policy</a>
+    </nav>
   </div>
 </footer>
 
