@@ -146,15 +146,18 @@
   .deal.hot{border-color:#BFD3FC;box-shadow:0 0 0 3px var(--accent-soft)}
 
   /* agent showcase tabs */
-  .show{display:grid;grid-template-columns:260px 1fr;gap:32px;margin-top:44px;align-items:start}
-  @media (max-width:900px){ .show{grid-template-columns:1fr;gap:18px} }
-  .tabs{display:flex;flex-direction:column;gap:2px;padding:6px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
-  @media (max-width:900px){ .tabs{flex-direction:row;overflow-x:auto;scrollbar-width:none} .tabs::-webkit-scrollbar{display:none} }
-  .tab{display:flex;align-items:center;gap:12px;min-height:48px;padding:0 14px;background:transparent;border:0;border-radius:9px;color:var(--muted);font:inherit;font-weight:500;font-size:.96rem;text-align:left;cursor:pointer;white-space:nowrap}
-  .tab .k{font-family:var(--mono);font-size:.76rem;color:var(--dim);font-weight:700}
-  .tab:hover{background:#F3F4F6;color:var(--ink)}
-  .tab[aria-selected="true"]{background:var(--accent-soft);color:var(--ink);font-weight:600}
-  .tab[aria-selected="true"] .k{color:var(--accent)}
+  .show{margin-top:44px}
+  .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .tab{display:flex;flex-direction:column;align-items:stretch;gap:16px;padding:24px 26px 26px;background:#FAFBFC;border:0;border-radius:0;color:var(--muted);font:inherit;font-weight:600;font-size:1.08rem;letter-spacing:-.02em;text-align:left;cursor:pointer;transition:background .15s ease,color .15s ease}
+  .tab .k{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:.9rem;font-weight:700;letter-spacing:.02em;color:var(--dim)}
+  .tab .k::after{content:"";flex:1;height:2px;border-radius:2px;background:var(--line-2);transition:background .15s ease}
+  .tab:nth-child(1){--sc:var(--orange);--st:var(--o-ink)} .tab:nth-child(2){--sc:var(--accent);--st:var(--accent)} .tab:nth-child(3){--sc:var(--green);--st:var(--g-ink)} .tab:nth-child(4){--sc:var(--pink);--st:var(--p-ink)}
+  .tab:hover{background:var(--panel);color:var(--ink)}
+  .tab[aria-selected="true"]{background:var(--panel);color:var(--ink)}
+  .tab[aria-selected="true"] .k{color:var(--st)}
+  .tab[aria-selected="true"] .k::after{background:linear-gradient(90deg,var(--sc),var(--line) 75%)}
+  @media (max-width:900px){ .tabs{grid-template-columns:1fr 1fr} .tab{padding:18px 18px 20px;font-size:1rem} }
+  .show > div:last-child{margin-top:40px}
   .panel{display:none}
   .panel.on{display:block}
   .panel h3{font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.035em;max-width:20ch}
@@ -176,6 +179,20 @@
     th:nth-child(2),td:nth-child(2){display:none}
     .msg{max-width:92%}
   }
+
+  /* demo cards */
+  .demos{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
+  .demo{position:relative;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:32px;min-width:0;overflow:hidden;box-shadow:0 1px 2px rgba(10,12,16,.03),0 16px 40px -24px rgba(10,12,16,.18)}
+  .demo::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--dc)}
+  .demo.b{--dc:var(--accent)} .demo.o{--dc:var(--orange)} .demo.g{--dc:var(--green)} .demo.p{--dc:var(--pink)}
+  .demo h3{font-size:clamp(1.4rem,2.4vw,1.9rem);letter-spacing:-.035em;max-width:22ch}
+  .demo .pd{color:var(--muted);margin-top:10px;max-width:52ch;font-size:.98rem}
+  .demo .frame{margin-top:24px}
+  .demo .rows .r{grid-template-columns:1fr auto}
+  .demo .rows .r span:not(.st){display:none}
+  @media (max-width:980px){ .demos{grid-template-columns:1fr;gap:18px} .demo .rows .r{grid-template-columns:1fr 1.6fr auto} .demo .rows .r span:not(.st){display:block} }
+  @media (max-width:640px){ .demo .rows .r{grid-template-columns:1fr auto} .demo .rows .r span:not(.st){display:none} }
+  @media (max-width:480px){ .demo{padding:22px 18px} }
 
   /* closing band */
   .band{padding:104px 0}
@@ -261,20 +278,12 @@
     <div class="wrap">
       <p class="mono">Examples</p>
       <h2>See them at work.</h2>
-      <p class="sub">Pick an example to see what the agent does day to day.</p>
-      <div class="show">
-        <div class="tabs" role="tablist" aria-label="Example agents">
-          <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true"><span class="k">01</span>Inbox agent</button>
-          <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><span class="k">02</span>Lead follow up</button>
-          <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><span class="k">03</span>Customer support</button>
-          <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1"><span class="k">04</span>Invoices &amp; documents</button>
-        </div>
-        <div>
-          <div class="panel on" role="tabpanel" id="p1" aria-labelledby="t1"><h3>Your inbox, sorted before you open it.</h3><p class="pd">Reads every email, replies to the routine ones, routes the rest and flags only what needs you.</p><div class="frame"><div class="frame-top"><i></i><i></i><i></i><b>Inbox agent</b><span class="pill">Illustrative</span></div><div class="rows"><div class="r"><b>Mokoena Supplies</b><span>Invoice INV 2231 for October</span><span class="st" style="--c:#22B455">Sent to Accounts</span></div><div class="r"><b>Sarah Naidoo</b><span>Do you deliver to Durban?</span><span class="st" style="--c:#22B455">Replied</span></div><div class="r"><b>Kagiso Holdings</b><span>Contract renewal, need answer today</span><span class="st" style="--c:#FF6A2B">Flagged for you</span></div><div class="r"><b>Liam Peters</b><span>Can we move Thursday's meeting?</span><span class="st" style="--c:#22B455">Rescheduled</span></div><div class="r"><b>Newsletter</b><span>Weekly industry roundup</span><span class="st" style="--c:#8A92A0">Archived</span></div></div><div class="frame-foot">3 need you</div></div></div>
-          <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden><h3>Every lead answered in minutes, not days.</h3><p class="pd">Replies to new enquiries straight away, asks the right questions and books the call into your calendar.</p><div class="frame"><div class="frame-top"><i></i><i></i><i></i><b>New enquiry from website</b><span class="pill">Illustrative</span></div><div class="chat"><div class="msg"><small>Thandi, 09:12</small>Hi, we need help with bookkeeping for a small practice. What does it cost?</div><div class="msg out"><small>Agent, 09:13</small>Thanks Thandi! Roughly how many invoices do you process a month, and which accounting software do you use?</div><div class="msg"><small>Thandi, 09:20</small>About 60 a month, we use Xero.</div><div class="msg out"><small>Agent, 09:20</small>Perfect. Would Thursday at 10:00 or Friday at 14:00 suit you for a quick call?</div><div class="event">Call booked: Thursday 10:00</div></div><div class="frame-foot">Replied in 1 minute</div></div></div>
-          <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden><h3>Customer questions answered day and night.</h3><p class="pd">Answers from your own price lists, policies and FAQs, and hands over to your team when a person is needed.</p><div class="frame"><div class="frame-top"><i></i><i></i><i></i><b>WhatsApp support</b><span class="pill">Illustrative</span></div><div class="chat"><div class="msg"><small>Customer, 22:41</small>Hi, are you open on Saturday? And how much is a full service for a Polo?</div><div class="msg out"><small>Agent, 22:41</small>Hi! Yes, we are open Saturday 08:00 to 13:00. A full service for a VW Polo is $245 including parts. Shall I book you in?</div><div class="msg"><small>Customer, 22:43</small>Yes please, Saturday at 9.</div><div class="event">Booking confirmed, reminder set for Friday</div></div><div class="frame-foot">Answered after hours</div></div></div>
-          <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden><h3>Invoices captured without typing a thing.</h3><p class="pd">Reads invoices and statements from email, pulls out the details and files them in your accounting system.</p><div class="frame"><div class="frame-top"><i></i><i></i><i></i><b>Invoice agent</b><span class="pill">Illustrative</span></div><div class="tbwrap"><table><thead><tr><th>Supplier</th><th>Invoice</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td>Mokoena Supplies</td><td>INV 2231</td><td>$1,482.00</td><td><span class="st" style="--c:#22B455">Captured</span></td></tr><tr><td>CityPrint</td><td>CP 0914</td><td>$326.55</td><td><span class="st" style="--c:#22B455">Captured</span></td></tr><tr><td>FibreLink</td><td>FL 8841</td><td>$119.90</td><td><span class="st" style="--c:#22B455">Captured</span></td></tr><tr><td>Bright Logistics</td><td>BL 377</td><td>$2,240.00</td><td><span class="st" style="--c:#FF6A2B">Differs from PO</span></td></tr></tbody></table></div><div class="frame-foot">1 needs review</div></div></div>
-        </div>
+      <p class="sub">What each agent does day to day.</p>
+      <div class="demos">
+        <article class="demo b"><h3>Your inbox, sorted before you open it.</h3><p class="pd">Reads every email, replies to the routine ones, routes the rest and flags only what needs you.</p><div class="frame"><div class="frame-top"><i></i><i></i><i></i><b>Inbox agent</b><span class="pill">Illustrative</span></div><div class="rows"><div class="r"><b>Mokoena Supplies</b><span>Invoice INV 2231 for October</span><span class="st" style="--c:#22B455">Sent to Accounts</span></div><div class="r"><b>Sarah Naidoo</b><span>Do you deliver to Durban?</span><span class="st" style="--c:#22B455">Replied</span></div><div class="r"><b>Kagiso Holdings</b><span>Contract renewal, need answer today</span><span class="st" style="--c:#FF6A2B">Flagged for you</span></div><div class="r"><b>Liam Peters</b><span>Can we move Thursday's meeting?</span><span class="st" style="--c:#22B455">Rescheduled</span></div><div class="r"><b>Newsletter</b><span>Weekly industry roundup</span><span class="st" style="--c:#8A92A0">Archived</span></div></div><div class="frame-foot">3 need you</div></div></article>
+        <article class="demo o"><h3>Every lead answered in minutes, not days.</h3><p class="pd">Replies to new enquiries straight away, asks the right questions and books the call into your calendar.</p><div class="frame"><div class="frame-top"><i></i><i></i><i></i><b>New enquiry from website</b><span class="pill">Illustrative</span></div><div class="chat"><div class="msg"><small>Thandi, 09:12</small>Hi, we need help with bookkeeping for a small practice. What does it cost?</div><div class="msg out"><small>Agent, 09:13</small>Thanks Thandi! Roughly how many invoices do you process a month, and which accounting software do you use?</div><div class="msg"><small>Thandi, 09:20</small>About 60 a month, we use Xero.</div><div class="msg out"><small>Agent, 09:20</small>Perfect. Would Thursday at 10:00 or Friday at 14:00 suit you for a quick call?</div><div class="event">Call booked: Thursday 10:00</div></div><div class="frame-foot">Replied in 1 minute</div></div></article>
+        <article class="demo g"><h3>Customer questions answered day and night.</h3><p class="pd">Answers from your own price lists, policies and FAQs, and hands over to your team when a person is needed.</p><div class="frame"><div class="frame-top"><i></i><i></i><i></i><b>WhatsApp support</b><span class="pill">Illustrative</span></div><div class="chat"><div class="msg"><small>Customer, 22:41</small>Hi, are you open on Saturday? And how much is a full service for a Polo?</div><div class="msg out"><small>Agent, 22:41</small>Hi! Yes, we are open Saturday 08:00 to 13:00. A full service for a VW Polo is $245 including parts. Shall I book you in?</div><div class="msg"><small>Customer, 22:43</small>Yes please, Saturday at 9.</div><div class="event">Booking confirmed, reminder set for Friday</div></div><div class="frame-foot">Answered after hours</div></div></article>
+        <article class="demo p"><h3>Invoices captured without typing a thing.</h3><p class="pd">Reads invoices and statements from email, pulls out the details and files them in your accounting system.</p><div class="frame"><div class="frame-top"><i></i><i></i><i></i><b>Invoice agent</b><span class="pill">Illustrative</span></div><div class="tbwrap"><table><thead><tr><th>Supplier</th><th>Invoice</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td>Mokoena Supplies</td><td>INV 2231</td><td>$1,482.00</td><td><span class="st" style="--c:#22B455">Captured</span></td></tr><tr><td>CityPrint</td><td>CP 0914</td><td>$326.55</td><td><span class="st" style="--c:#22B455">Captured</span></td></tr><tr><td>FibreLink</td><td>FL 8841</td><td>$119.90</td><td><span class="st" style="--c:#22B455">Captured</span></td></tr><tr><td>Bright Logistics</td><td>BL 377</td><td>$2,240.00</td><td><span class="st" style="--c:#FF6A2B">Differs from PO</span></td></tr></tbody></table></div><div class="frame-foot">1 needs review</div></div></article>
       </div>
     </div>
   </section>
@@ -316,32 +325,6 @@
     </nav>
   </div>
 </footer>
-<script>
-  /* showcase tabs */
-  (function(){
-    var tabs=Array.prototype.slice.call(document.querySelectorAll('.tab'));
-    function select(t,focus){
-      tabs.forEach(function(x){
-        var on=x===t, p=document.getElementById(x.getAttribute('aria-controls'));
-        x.setAttribute('aria-selected',on?'true':'false'); x.tabIndex=on?0:-1;
-        p.hidden=!on; p.classList.toggle('on',on);
-      });
-      if(focus) t.focus();
-    }
-    tabs.forEach(function(t,i){
-      t.addEventListener('click',function(){ select(t); });
-      t.addEventListener('keydown',function(e){
-        var k=e.key, n=null;
-        if(k==='ArrowDown'||k==='ArrowRight') n=tabs[(i+1)%tabs.length];
-        if(k==='ArrowUp'||k==='ArrowLeft') n=tabs[(i-1+tabs.length)%tabs.length];
-        if(n){ e.preventDefault(); select(n,true); }
-      });
-    });
-  })();
-
-
-</script>
-
 <script>
   /* keep the address clean: scroll to sections without adding #section to it */
   (function(){

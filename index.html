@@ -158,32 +158,6 @@
   .work-pad{padding-bottom:104px}
   @media (max-width:640px){ .work-pad{padding-bottom:64px} }
 
-  /* results: open row of outcomes, no boxes */
-  .outcomes{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
-  .oc{padding:36px 28px 34px;display:flex;flex-direction:column;gap:10px}
-  .oc:first-child{padding-left:0}
-  .oc:last-child{padding-right:0}
-  .oc + .oc{border-left:1px solid var(--line)}
-  .oc .bar{width:28px;height:4px;border-radius:2px;background:var(--oc);margin-bottom:18px}
-  .oc .num{font-size:clamp(3rem,5.4vw,4.6rem);font-weight:600;letter-spacing:-.06em;line-height:.9;color:var(--ink)}
-  .oc .num b{font-weight:inherit;color:var(--oct)}
-  .oc .num i{font-style:normal;font-size:.48em;letter-spacing:-.03em;margin-left:.1em;color:var(--oct)}
-  .oc h3{margin-top:14px;font-size:1.12rem;letter-spacing:-.02em}
-  .oc p{color:var(--muted);font-size:.95rem;max-width:30ch}
-  .oc{--oc:var(--ink);--oct:var(--dim)}
-  @media (max-width:980px){
-    .outcomes{grid-template-columns:1fr 1fr}
-    .oc{padding:30px 24px}
-    .oc:nth-child(odd){padding-left:0} .oc:nth-child(even){padding-right:0}
-    .oc:nth-child(3){border-left:0}
-    .oc:nth-child(n+3){border-top:1px solid var(--line)}
-  }
-  @media (max-width:560px){
-    .outcomes{grid-template-columns:1fr}
-    .oc,.oc:nth-child(odd),.oc:nth-child(even){padding:26px 0;border-left:0}
-    .oc + .oc{border-top:1px solid var(--line)}
-  }
-
   /* contact */
   .cta-sec{padding:104px 0}
   @media (max-width:640px){ .cta-sec{padding:64px 0} }
@@ -341,23 +315,6 @@
           <div class="p3"><span class="step">01</span><h3>Done for you</h3><p>We plan, build, launch and look after it. No technical people needed on your side.</p></div>
           <div class="p3"><span class="step">02</span><h3>Built around you</h3><p>Your process, your tools, your branding. Nothing off the shelf.</p></div>
           <div class="p3"><span class="step">03</span><h3>Yours to keep</h3><p>You own the app and the data, set up under your own accounts.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="results">
-    <div class="rail">
-      <div class="wrap work-pad">
-        <div class="head">
-          <div><span class="mono">Results</span><h2>What you get back.</h2></div>
-          <p>Less admin, faster replies and fewer hires needed. This is what our agents and apps are built to do.</p>
-        </div>
-        <div class="outcomes">
-          <div class="oc o"><span class="bar"></span><div class="num">2<i>min</i></div><h3>To reply to a new lead</h3><p>Enquiries get an answer straight away, not hours or days later.</p></div>
-          <div class="oc b"><span class="bar"></span><div class="num">24<b>/7</b></div><h3>Always on</h3><p>Agents answer customers and leads at night and on weekends.</p></div>
-          <div class="oc g"><span class="bar"></span><div class="num">0</div><h3>Manual data entry</h3><p>Invoices and forms are captured and filed for you, saving hours and extra admin hires.</p></div>
-          <div class="oc p"><span class="bar"></span><div class="num">1</div><h3>Place for everything</h3><p>Your team and clients see the same up to date information.</p></div>
         </div>
       </div>
     </div>
