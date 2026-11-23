@@ -114,15 +114,31 @@
   /* embed mode (vsl.html?embed=1, used on the homepage): no control bar, click to play */
   .embed .ui{display:none}
   .embed .stage{cursor:pointer}
-  .embed .start{background:rgba(10,12,16,.12);display:grid;align-content:center;justify-items:center;gap:34px}
-  .embed:not(.started) .cap,.embed:not(.started) .bar{opacity:0}
+  .embed:not(.started) .cap,.embed:not(.started) .bar,.embed:not(.started) .start{opacity:0;display:none}
   .embed.started .start{display:none}
   .embed.started:not(.playing) .start{display:grid;background:rgba(10,12,16,.18)}
-  .embed.started:not(.playing) .start .plabel{display:none}
   .pbtn{width:200px;height:200px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 20px 60px rgba(10,12,16,.35);transition:transform .2s ease}
   .pbtn svg{width:76px;height:76px;margin-left:12px}
   .stage:hover .pbtn{transform:scale(1.05)}
-  .plabel{font-size:40px;font-weight:600;letter-spacing:-.02em;color:#fff;background:rgba(10,12,16,.82);border-radius:14px;padding:14px 28px}
+
+  /* poster: the still frame visitors see before they press play */
+  .poster{display:none;position:absolute;inset:0;z-index:16;background:#0A0C10;color:#fff;padding:0 140px;align-items:center;justify-content:space-between;gap:80px;overflow:hidden}
+  .embed:not(.started) .poster{display:flex}
+  .poster::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 600px at 85% 20%,rgba(31,99,240,.35),transparent 70%),radial-gradient(800px 560px at 10% 110%,rgba(255,106,43,.28),transparent 70%)}
+  .poster::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 2px,transparent 2px);background-size:44px 44px;-webkit-mask-image:linear-gradient(90deg,transparent 30%,#000);mask-image:linear-gradient(90deg,transparent 30%,#000)}
+  .poster>*{position:relative;z-index:1}
+  .poster .pb-brand{position:absolute;left:140px;top:96px;display:flex;align-items:center;gap:18px;font-weight:700;font-size:40px;letter-spacing:-.03em}
+  .poster .pb-brand svg{width:48px;height:48px}
+  .poster .pk{font-family:var(--label);font-size:34px;letter-spacing:.14em;text-transform:uppercase;color:#FF8A5B;margin-bottom:34px}
+  .poster h2{text-wrap:balance;color:#fff;margin:0;font-size:124px;line-height:.98;letter-spacing:-.05em;font-weight:700;max-width:1060px}
+  .poster h2 .b{color:#5B8EFF}
+  .poster h2 .o{color:#FF7A3D}
+  .poster .pmeta{margin-top:48px;display:flex;align-items:center;gap:20px;font-size:38px;font-weight:500;color:#AEB6C2}
+  .poster .pmeta b{font-weight:600;color:#fff}
+  .poster .pmeta i{width:12px;height:12px;border-radius:50%;background:#22B455;display:block}
+  .pplay{flex:none;width:300px;height:300px;border-radius:50%;background:#FF6A2B;display:grid;place-items:center;box-shadow:0 0 0 24px rgba(255,106,43,.16),0 0 0 48px rgba(255,106,43,.07),0 30px 80px rgba(0,0,0,.5);transition:transform .2s ease}
+  .pplay svg{width:110px;height:110px;margin-left:16px}
+  .stage:hover .pplay{transform:scale(1.05)}
 </style>
 </head>
 <body>
@@ -209,6 +225,15 @@
   </section>
 
   <div class="start" id="startCard">Press Space to play</div>
+  <div class="poster" aria-hidden="true">
+    <div class="pb-brand"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="5" fill="#0A0C10" stroke="#fff" stroke-width="1"/><g stroke-width="2.5" stroke-linecap="round"><line x1="16" y1="4" x2="16" y2="10" stroke="#FF6A2B"/><line x1="22" y1="16" x2="28" y2="16" stroke="#16A34A"/><line x1="16" y1="22" x2="16" y2="28" stroke="#1F63F0"/><line x1="4" y1="16" x2="10" y2="16" stroke="#FF3D8B"/></g></svg>Tailwind Solutions</div>
+    <div>
+      <div class="pk">Watch the intro</div>
+      <h2>Give your team their <span class="o">hours</span> back with <span class="b">AI&nbsp;agents</span> and apps.</h2>
+      <div class="pmeta"><i></i><span><b id="pDur">1 minute</b>, sound on</span></div>
+    </div>
+    <div class="pplay"><svg viewBox="0 0 24 24"><path d="M6 3.5v17l14-8.5z" fill="#fff"/></svg></div>
+  </div>
   <div class="cap" id="cap"></div>
   <div class="bar" id="bar"></div>
 </div>
@@ -322,17 +347,17 @@
     else if(e.key==='ArrowLeft') seek(t-5);
   });
   /* embed mode: show a still frame with a play button; a click anywhere plays or pauses */
-  var EMBED = new URLSearchParams(location.search).has('embed'), POSTER = 0;
+  var EMBED = new URLSearchParams(location.search).has('embed');
   if(EMBED){
     document.body.classList.add('embed','hideui');
-    document.getElementById('startCard').innerHTML='<span class="pbtn"><svg viewBox="0 0 24 24"><path d="M6 3.5v17l14-8.5z" fill="#0A0C10"/></svg></span><span class="plabel">Watch the 1 minute intro</span>';
-    POSTER = +document.querySelector('.scene:nth-of-type(4)').dataset.to - 0.1;
+    document.getElementById('startCard').innerHTML='<span class="pbtn"><svg viewBox="0 0 24 24"><path d="M6 3.5v17l14-8.5z" fill="#0A0C10"/></svg></span>';
+    document.getElementById('pDur').textContent=fmt(Math.round(DURATION));
     stage.addEventListener('click',function(e){
       if(e.target.closest('.cta')){ e.stopPropagation(); try{ window.top.location.hash='contact'; }catch(x){} pause(); return; }
       if(!document.body.classList.contains('started')) t=0;
       toggle();
     });
-    seek(POSTER);
+    seek(0);
   }
   /* allow ?t=40 in the address to preview a moment */
   var q=new URLSearchParams(location.search).get('t'); if(q){ document.body.classList.add('started'); seek(parseFloat(q)); }
