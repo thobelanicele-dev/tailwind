@@ -27,6 +27,9 @@
     --accent-soft:#E8EFFE;
     --orange:#FF6A2B;
     --green:#22B455;
+    --pink:#FF4F9A;
+    --o-big:#F0561A;
+    --o-ink:#C2410C; --g-ink:#15803D; --p-ink:#C2255C;
     --maxw:1200px;
     --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
     --mono:Arial,Helvetica,sans-serif;
@@ -81,6 +84,7 @@
   @media (max-width:480px){ section.blk{padding:24px 18px} .head{padding-top:48px} .doc{margin-bottom:64px} }
   .doc h2{font-size:1.3rem;letter-spacing:-.03em;margin:0 0 12px;display:flex;gap:14px;align-items:baseline}
   .doc h2 .n{font-family:var(--mono);font-size:.82rem;color:var(--accent);font-weight:700}
+  .blk:nth-child(4n+1) h2 .n{color:var(--o-ink)} .blk:nth-child(4n+3) h2 .n{color:var(--g-ink)} .blk:nth-child(4n) h2 .n{color:var(--p-ink)}
   .doc p{margin:0 0 14px;color:var(--muted)}
   .doc p:last-child{margin-bottom:0}
   .doc ul{margin:0 0 14px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
